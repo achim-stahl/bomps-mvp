@@ -98,6 +98,13 @@ const AddOnPage = () => {
         {/* Hero Section */}
         <section className="px-4 sm:px-6 lg:px-8 mb-16">
           <div className="max-w-7xl mx-auto text-center">
+            <div className="mb-8">
+              <img 
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80" 
+                alt="Business extensions" 
+                className="w-full max-w-5xl mx-auto h-64 object-cover rounded-3xl shadow-2xl"
+              />
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               All Add-on
             </h1>

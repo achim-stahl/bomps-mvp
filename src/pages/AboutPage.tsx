@@ -30,6 +30,13 @@ const AboutPage = () => {
         {/* Hero Section */}
         <section className="px-4 sm:px-6 lg:px-8 mb-20">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80" 
+                alt="Team collaboration" 
+                className="w-full h-80 object-cover rounded-3xl shadow-xl"
+              />
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               About Bomps.app
             </h1>

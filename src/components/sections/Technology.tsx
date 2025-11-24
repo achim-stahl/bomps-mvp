@@ -22,8 +22,16 @@ export const TechnologySection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80" 
+          alt="Technology" 
+          className="w-full h-full object-cover opacity-10"
+        />
+      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-primary-500/20 rounded-full text-primary-300 font-semibold text-sm mb-4">
             SOLID FOUNDATION

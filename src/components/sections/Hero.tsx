@@ -7,6 +7,14 @@ export const HeroSection = () => {
     <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-gray-50 -z-10" />
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-10 opacity-5">
+        <img 
+          src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80" 
+          alt="Team collaboration" 
+          className="w-full h-full object-cover"
+        />
+      </div>
       
       <div className="max-w-7xl mx-auto">
         {/* Announcement Badge */}
