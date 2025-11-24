@@ -4,7 +4,7 @@ import AddOnPage from './pages/AddOnPage';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/bomps-mvp">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/add-on" element={<AddOnPage />} />
