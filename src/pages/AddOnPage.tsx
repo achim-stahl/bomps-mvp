@@ -123,37 +123,37 @@ const AddOnPage = () => {
                 return (
                   <Card 
                     key={addon.id} 
-                    className="bg-white border-gray-200 hover:border-primary-300 hover:shadow-xl transition-all duration-300 group"
+                    className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-xl transition-all duration-300 group"
                   >
                     <CardHeader>
                       <div className="flex items-start justify-between mb-4">
-                        <div className="w-14 h-14 rounded-xl bg-gray-50 group-hover:bg-primary-50 border-2 border-gray-100 group-hover:border-primary-200 flex items-center justify-center transition-all duration-300">
-                          <Icon className="h-7 w-7 text-gray-600 group-hover:text-primary-600 transition-colors duration-300" />
+                        <div className="w-14 h-14 rounded-xl bg-gray-50 dark:bg-gray-800 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 border-2 border-gray-100 dark:border-gray-700 group-hover:border-primary-200 dark:group-hover:border-primary-700 flex items-center justify-center transition-all duration-300">
+                          <Icon className="h-7 w-7 text-gray-600 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300" />
                         </div>
-                        <span className="px-3 py-1.5 bg-gray-100 group-hover:bg-primary-100 text-gray-700 group-hover:text-primary-700 text-xs font-semibold rounded-full transition-all duration-300 uppercase tracking-wide">
+                        <span className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 text-gray-700 dark:text-gray-300 group-hover:text-primary-700 dark:group-hover:text-primary-400 text-xs font-semibold rounded-full transition-all duration-300 uppercase tracking-wide">
                           {addon.badge}
                         </span>
                       </div>
-                      <CardTitle className="text-2xl text-gray-900">{addon.name}</CardTitle>
+                      <CardTitle className="text-2xl text-gray-900 dark:text-white">{addon.name}</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div className="space-y-2">
                         <div className="flex items-baseline gap-2">
-                          <span className="text-3xl font-bold text-gray-900">
+                          <span className="text-3xl font-bold text-gray-900 dark:text-white">
                             €{addon.priceMonthly.toFixed(2)}
                           </span>
-                          <span className="text-sm text-gray-500 font-medium">/Month</span>
+                          <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">/Month</span>
                         </div>
                         <div className="flex items-baseline gap-2">
-                          <span className="text-xl font-semibold text-gray-700">
+                          <span className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                             €{addon.priceYearly.toFixed(2)}
                           </span>
-                          <span className="text-sm text-gray-500 font-medium">/Year</span>
+                          <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">/Year</span>
                         </div>
                       </div>
                       <Button 
                         variant="outline" 
-                        className="w-full group-hover:bg-primary-50 group-hover:text-primary-700 group-hover:border-primary-300 transition-all duration-300"
+                        className="w-full group-hover:bg-primary-50 dark:group-hover:bg-primary-900/30 group-hover:text-primary-700 dark:group-hover:text-primary-400 group-hover:border-primary-300 dark:group-hover:border-primary-600 transition-all duration-300"
                       >
                         View Details
                       </Button>
@@ -168,10 +168,10 @@ const AddOnPage = () => {
         {/* Bottom Description */}
         <section className="px-4 sm:px-6 lg:px-8 mt-20">
           <div className="max-w-4xl mx-auto prose prose-lg">
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               An effective fashion theme should be visually appealing and easy to navigate. A good theme makes it easy for customers to find and buy the items they're interested in. The theme should also be responsive so that it looks good on all devices.
             </p>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               With the Style theme, you get all of the above - and more. The theme gives you everything you need to sell your products and keep your audience coming back for more. Easily customize the theme and adjust its design to your branding needs. Add products, polish product pages, and start growing your online business.
             </p>
           </div>

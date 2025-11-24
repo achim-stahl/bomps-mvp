@@ -179,8 +179,8 @@ const PricingPage = () => {
                   key={index} 
                   className={`relative ${
                     plan.popular 
-                      ? 'border-brand-300 shadow-xl ring-2 ring-brand-200' 
-                      : 'border-gray-200'
+                      ? 'border-brand-300 dark:border-brand-600 shadow-xl ring-2 ring-brand-200 dark:ring-brand-700' 
+                      : 'border-gray-200 dark:border-gray-800'
                   }`}
                 >
                   {plan.popular && (
@@ -194,53 +194,53 @@ const PricingPage = () => {
                   <CardHeader className="text-center pb-8 pt-8">
                     <CardTitle className="text-2xl mb-6">{plan.name}</CardTitle>
                     <div className="mb-6">
-                      <span className="text-5xl font-bold text-gray-900">
+                      <span className="text-5xl font-bold text-gray-900 dark:text-white">
                         €{plan.price.toFixed(2)}
                       </span>
-                      <span className="text-gray-600 ml-2">/Per Month</span>
+                      <span className="text-gray-600 dark:text-gray-400 ml-2">/Per Month</span>
                     </div>
                   </CardHeader>
                   
                   <CardContent className="space-y-6">
                     {/* Features */}
                     <div className="space-y-4">
-                      <div className="flex items-center gap-3 text-gray-700">
-                        <div className="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0">
-                          <Users className="h-5 w-5 text-gray-600" />
+                      <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                        <div className="w-10 h-10 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center flex-shrink-0">
+                          <Users className="h-5 w-5 text-gray-600 dark:text-gray-400" />
                         </div>
                         <div>
-                          <span className="text-sm text-gray-600">Max User: </span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Max User: </span>
                           <span className="font-semibold">{plan.features.maxUsers}</span>
                         </div>
                       </div>
                       
-                      <div className="flex items-center gap-3 text-gray-700">
-                        <div className="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0">
-                          <Building2 className="h-5 w-5 text-gray-600" />
+                      <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                        <div className="w-10 h-10 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center flex-shrink-0">
+                          <Building2 className="h-5 w-5 text-gray-600 dark:text-gray-400" />
                         </div>
                         <div>
-                          <span className="text-sm text-gray-600">Max Workspace: </span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Max Workspace: </span>
                           <span className="font-semibold">{plan.features.maxWorkspaces}</span>
                         </div>
                       </div>
                       
-                      <div className="flex items-center gap-3 text-gray-700">
-                        <div className="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0">
-                          <Clock className="h-5 w-5 text-gray-600" />
+                      <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                        <div className="w-10 h-10 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center flex-shrink-0">
+                          <Clock className="h-5 w-5 text-gray-600 dark:text-gray-400" />
                         </div>
                         <div>
-                          <span className="text-sm text-gray-600">Free Trial Days: </span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Free Trial Days: </span>
                           <span className="font-semibold">{plan.features.trialDays}</span>
                         </div>
                       </div>
                     </div>
 
                     {/* Addons Section */}
-                    <div className="border-t border-gray-200 pt-6">
-                      <h4 className="font-semibold text-gray-900 mb-4">Compare our plans</h4>
+                    <div className="border-t border-gray-200 dark:border-gray-800 pt-6">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Compare our plans</h4>
                       <div className="space-y-2">
                         {plan.addons.map((addon, idx) => (
-                          <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
+                          <div key={idx} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                             <Check className="h-4 w-4 text-success-600 flex-shrink-0" />
                             <span>{addon}</span>
                           </div>
