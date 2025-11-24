@@ -39,11 +39,12 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-primary-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <span className="text-xl font-bold text-gray-900 dark:text-white">Bomps</span>
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/media/logo/bomps_dark_logo.png" 
+                alt="Bomps Logo" 
+                className="h-8 w-auto"
+              />
             </Link>
           </div>
 

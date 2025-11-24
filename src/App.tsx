@@ -7,6 +7,10 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import NotFoundPage from './pages/NotFoundPage';
+import DashboardLayout from './components/dashboard/DashboardLayout';
+import DashboardHomePage from './pages/dashboard/DashboardHomePage';
+import CustomersPage from './pages/dashboard/CustomersPage';
+import AddOnManagerPage from './pages/dashboard/AddOnManagerPage';
 import { CookieBanner } from './components/CookieBanner';
 import { ScrollToTop } from './components/ScrollToTop';
 
@@ -14,6 +18,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
         <Route path="/add-on" element={<AddOnPage />} />
         <Route path="/pricing" element={<PricingPage />} />
@@ -21,6 +26,21 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        
+        {/* Dashboard Routes */}
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<DashboardHomePage />} />
+          <Route path="customers" element={<CustomersPage />} />
+          <Route path="subscription" element={<div className="text-gray-900 dark:text-white">Subscription Page - Coming Soon</div>} />
+          <Route path="add-on-manager" element={<AddOnManagerPage />} />
+          <Route path="helpdesk" element={<div className="text-gray-900 dark:text-white">Helpdesk Page - Coming Soon</div>} />
+          <Route path="cms" element={<div className="text-gray-900 dark:text-white">CMS Page - Coming Soon</div>} />
+          <Route path="email-template" element={<div className="text-gray-900 dark:text-white">Email Template Page - Coming Soon</div>} />
+          <Route path="notification-template" element={<div className="text-gray-900 dark:text-white">Notification Template Page - Coming Soon</div>} />
+          <Route path="settings" element={<div className="text-gray-900 dark:text-white">Settings Page - Coming Soon</div>} />
+        </Route>
+
+        {/* 404 */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <CookieBanner />

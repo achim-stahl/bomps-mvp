@@ -1,28 +1,43 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
 import { Eye, EyeOff } from 'lucide-react';
+import loginCredentials from '../../login.json';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Login:', { email, password });
+    setError('');
+    
+    // Check credentials against login.json
+    if (email === loginCredentials.email && password === loginCredentials.password) {
+      // Store login state
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('userEmail', email);
+      
+      // Redirect to dashboard
+      navigate('/dashboard');
+    } else {
+      setError('Invalid email or password');
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         {/* Logo */}
-        <Link to="/" className="flex items-center justify-center space-x-2 mb-8">
-          <div className="w-12 h-12 bg-gradient-to-br from-brand-600 to-brand-700 rounded-xl flex items-center justify-center">
-            <span className="text-white font-bold text-2xl">B</span>
-          </div>
-          <span className="text-2xl font-bold text-gray-900">Bomps</span>
+        <Link to="/" className="flex items-center justify-center mb-8">
+          <img 
+            src="/media/logo/bomps_dark_logo.png" 
+            alt="Bomps Logo" 
+            className="h-10 w-auto"
+          />
         </Link>
 
         <h2 className="text-center text-3xl font-bold text-gray-900 mb-2">
@@ -36,6 +51,13 @@ const LoginPage = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow-lg sm:rounded-2xl sm:px-10 border border-gray-200">
           <form className="space-y-6" onSubmit={handleSubmit}>
+            {/* Error Message */}
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+                {error}
+              </div>
+            )}
+            
             {/* Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
