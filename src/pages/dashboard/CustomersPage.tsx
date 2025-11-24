@@ -1,6 +1,8 @@
-import { Users, MoreVertical, Download, Filter, Plus } from 'lucide-react';
+import { Users, MoreVertical, Download, Filter, Plus, Grid3x3, List, X, Edit, Trash2, Shield, FileText, Mail, Eye } from 'lucide-react';
 import { Card, CardContent } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const customers = [
   {
@@ -42,6 +44,12 @@ const customers = [
 ];
 
 export default function CustomersPage() {
+  const navigate = useNavigate();
+
+  const handleListView = () => {
+    navigate('/dashboard/customers/list');
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -57,6 +65,14 @@ export default function CustomersPage() {
 
         {/* Action Buttons */}
         <div className="flex items-center gap-3">
+          <Button 
+            onClick={handleListView}
+            variant="outline" 
+            className="flex items-center gap-2 bg-primary-600 text-white hover:bg-primary-700 border-primary-600"
+          >
+            <List className="h-4 w-4" />
+            <span>List View</span>
+          </Button>
           <Button variant="outline" className="flex items-center gap-2">
             <Users className="h-4 w-4" />
             <span>Import</span>

@@ -10,7 +10,9 @@ import NotFoundPage from './pages/NotFoundPage';
 import DashboardLayout from './components/dashboard/DashboardLayout';
 import DashboardHomePage from './pages/dashboard/DashboardHomePage';
 import CustomersPage from './pages/dashboard/CustomersPage';
+import CustomersListPage from './pages/dashboard/CustomersListPage';
 import AddOnManagerPage from './pages/dashboard/AddOnManagerPage';
+import ProfilePage from './pages/dashboard/ProfilePage';
 import { CookieBanner } from './components/CookieBanner';
 import { ScrollToTop } from './components/ScrollToTop';
 
@@ -31,6 +33,8 @@ function App() {
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<DashboardHomePage />} />
           <Route path="customers" element={<CustomersPage />} />
+          <Route path="customers/list" element={<CustomersListPage />} />
+          <Route path="profile" element={<ProfilePage />} />
           <Route path="subscription" element={<div className="text-gray-900 dark:text-white">Subscription Page - Coming Soon</div>} />
           <Route path="add-on-manager" element={<AddOnManagerPage />} />
           <Route path="helpdesk" element={<div className="text-gray-900 dark:text-white">Helpdesk Page - Coming Soon</div>} />
