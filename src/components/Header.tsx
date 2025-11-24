@@ -25,13 +25,15 @@ export const Header = () => {
             <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
             <a href="#modules" className="text-gray-600 hover:text-gray-900 transition-colors">Modules</a>
             <Link to="/add-on" className="text-gray-600 hover:text-gray-900 transition-colors">Add-ons</Link>
-            <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
-            <a href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">About</a>
+            <Link to="/pricing" className="text-gray-600 hover:text-gray-900 transition-colors">Pricing</Link>
+            <Link to="/about" className="text-gray-600 hover:text-gray-900 transition-colors">About</Link>
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm">Login</Button>
+            <Link to="/login">
+              <Button variant="ghost" size="sm">Login</Button>
+            </Link>
             <Button variant="primary" size="sm">Get Started</Button>
           </div>
 
@@ -52,10 +54,12 @@ export const Header = () => {
             <a href="#features" className="block text-gray-600 hover:text-gray-900 py-2">Features</a>
             <a href="#modules" className="block text-gray-600 hover:text-gray-900 py-2">Modules</a>
             <Link to="/add-on" className="block text-gray-600 hover:text-gray-900 py-2">Add-ons</Link>
-            <a href="#pricing" className="block text-gray-600 hover:text-gray-900 py-2">Pricing</a>
-            <a href="#about" className="block text-gray-600 hover:text-gray-900 py-2">About</a>
+            <Link to="/pricing" className="block text-gray-600 hover:text-gray-900 py-2">Pricing</Link>
+            <Link to="/about" className="block text-gray-600 hover:text-gray-900 py-2">About</Link>
             <div className="pt-4 space-y-2">
-              <Button variant="ghost" size="sm" className="w-full">Login</Button>
+              <Link to="/login" className="block">
+                <Button variant="ghost" size="sm" className="w-full">Login</Button>
+              </Link>
               <Button variant="primary" size="sm" className="w-full">Get Started</Button>
             </div>
           </div>
