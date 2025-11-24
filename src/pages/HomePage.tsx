@@ -5,6 +5,8 @@ import { ModulesSection } from '@/components/sections/Modules';
 import { TechnologySection } from '@/components/sections/Technology';
 import { BenefitsSection } from '@/components/sections/Benefits';
 import { CTASection, FinalCTA } from '@/components/sections/CTA';
+import { ScrollToTop } from '@/components/ScrollToTop';
+import { NewsletterModal } from '@/components/NewsletterModal';
 
 const HomePage = () => {
   return (
@@ -20,6 +22,8 @@ const HomePage = () => {
         <FinalCTA />
       </main>
       <Footer />
+      <ScrollToTop />
+      <NewsletterModal />
     </div>
   );
 };

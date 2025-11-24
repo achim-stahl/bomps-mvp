@@ -41,6 +41,15 @@ export const HeroSection = () => {
             secure backend coupled with an intuitive eCommerce.
           </p>
 
+          {/* Hero Image */}
+          <div className="mb-12">
+            <img 
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80" 
+              alt="Team working together" 
+              className="w-full max-w-5xl mx-auto h-96 object-cover rounded-3xl shadow-2xl"
+            />
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button variant="primary" size="lg" className="group">
               Get the Package
