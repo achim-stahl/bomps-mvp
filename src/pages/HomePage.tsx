@@ -5,12 +5,11 @@ import { ModulesSection } from '@/components/sections/Modules';
 import { TechnologySection } from '@/components/sections/Technology';
 import { BenefitsSection } from '@/components/sections/Benefits';
 import { CTASection, FinalCTA } from '@/components/sections/CTA';
-import { ScrollToTop } from '@/components/ScrollToTop';
 import { NewsletterModal } from '@/components/NewsletterModal';
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-950">
       <Header />
       <main>
         <HeroSection />
@@ -22,7 +21,6 @@ const HomePage = () => {
         <FinalCTA />
       </main>
       <Footer />
-      <ScrollToTop />
       <NewsletterModal />
     </div>
   );

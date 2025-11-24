@@ -97,7 +97,7 @@ const PricingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-950">
       <Header />
       
       <main className="pt-24 pb-20">
@@ -111,10 +111,10 @@ const PricingPage = () => {
                 className="w-full max-w-4xl mx-auto h-64 object-cover rounded-3xl shadow-xl"
               />
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
               Simple Pricing
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
               Choose extensions that best match your business needs
             </p>
             

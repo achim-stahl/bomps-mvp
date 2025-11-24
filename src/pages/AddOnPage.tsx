@@ -91,7 +91,7 @@ const AddOnPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-950">
       <Header />
       
       <main className="pt-24 pb-20">
@@ -105,10 +105,10 @@ const AddOnPage = () => {
                 className="w-full max-w-5xl mx-auto h-64 object-cover rounded-3xl shadow-2xl"
               />
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
               All Add-on
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Lay a solid foundation for your fashion brand. Grab a high-converting fashion theme powered by a secure backend coupled with an intuitive eCommerce mobile app.
             </p>
           </div>

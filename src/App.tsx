@@ -8,6 +8,7 @@ import RegisterPage from './pages/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { CookieBanner } from './components/CookieBanner';
+import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <CookieBanner />
+      <ScrollToTop />
     </Router>
   );
 }

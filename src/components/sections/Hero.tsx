@@ -6,7 +6,7 @@ export const HeroSection = () => {
   return (
     <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-gray-50 -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-black -z-10" />
       {/* Background Image */}
       <div className="absolute inset-0 -z-10 opacity-5">
         <img 
@@ -30,13 +30,13 @@ export const HeroSection = () => {
 
         {/* Hero Content */}
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
             With Bomps, you can take care of{' '}
-            <span className="text-primary-600">each need</span> of your business functions{' '}
-            <span className="text-primary-600">in one place</span>
+            <span className="text-primary-600 dark:text-primary-400">each need</span> of your business functions{' '}
+            <span className="text-primary-600 dark:text-primary-400">in one place</span>
           </h1>
           
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
             Lay a solid foundation for your brand. Grab a high-converting web powered by a 
             secure backend coupled with an intuitive eCommerce.
           </p>
@@ -62,7 +62,7 @@ export const HeroSection = () => {
         </div>
 
         {/* Trust Badges */}
-        <div className="mt-16 flex items-center justify-center gap-8 text-sm text-gray-500">
+        <div className="mt-16 flex items-center justify-center gap-8 text-sm text-gray-500 dark:text-gray-400">
           <div className="flex items-center gap-2">
             <Shield className="h-5 w-5 text-primary-600" />
             <span>Enterprise-grade security</span>
