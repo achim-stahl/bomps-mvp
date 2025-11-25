@@ -21,7 +21,7 @@ import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/bomps-mvp">
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
