@@ -53,9 +53,9 @@ export default function CustomersPage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Customers</h1>
+          <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Customers</h1>
           <div className="flex items-center gap-2 mt-2 text-sm text-gray-600 dark:text-gray-400">
             <a href="/dashboard" className="text-primary-600 dark:text-primary-400 hover:underline">Dashboard</a>
             <span>/</span>
@@ -64,26 +64,26 @@ export default function CustomersPage() {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 lg:gap-3">
           <Button 
             onClick={handleListView}
             variant="outline" 
             className="flex items-center gap-2 bg-primary-600 text-white hover:bg-primary-700 border-primary-600"
           >
             <List className="h-4 w-4" />
-            <span>List View</span>
+            <span className="hidden sm:inline">List View</span>
           </Button>
           <Button variant="outline" className="flex items-center gap-2">
             <Users className="h-4 w-4" />
-            <span>Import</span>
+            <span className="hidden sm:inline">Import</span>
           </Button>
           <Button variant="outline" className="flex items-center gap-2">
             <Download className="h-4 w-4" />
-            <span>Export</span>
+            <span className="hidden sm:inline">Export</span>
           </Button>
           <Button variant="outline" className="flex items-center gap-2">
             <Filter className="h-4 w-4" />
-            <span>Filter</span>
+            <span className="hidden sm:inline">Filter</span>
           </Button>
           <Button className="flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white">
             <Plus className="h-4 w-4" />
@@ -93,7 +93,7 @@ export default function CustomersPage() {
       </div>
 
       {/* Customers Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
         {customers.map((customer) => (
           <Card key={customer.id} className="relative group hover:shadow-lg transition-shadow">
             <CardContent className="p-6">

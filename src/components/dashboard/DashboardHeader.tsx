@@ -1,21 +1,17 @@
-import { Globe, ChevronDown, Moon, Sun, User, LogOut } from 'lucide-react';
+import { Globe, ChevronDown, Moon, Sun, User, LogOut, Menu } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useDarkMode } from '../../hooks/useDarkMode';
 
-export default function DashboardHeader() {
-  const [darkMode, setDarkMode] = useState(false);
+interface DashboardHeaderProps {
+  onToggleMobileMenu?: () => void;
+}
+
+export default function DashboardHeader({ onToggleMobileMenu }: DashboardHeaderProps) {
+  const { darkMode, toggleDarkMode } = useDarkMode();
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const userMenuRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const isDark = localStorage.getItem('darkMode') === 'true' ||
-      (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    setDarkMode(isDark);
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -29,17 +25,6 @@ export default function DashboardHeader() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const toggleDarkMode = () => {
-    const newDarkMode = !darkMode;
-    setDarkMode(newDarkMode);
-    localStorage.setItem('darkMode', String(newDarkMode));
-    if (newDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
-
   const handleLogout = () => {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('userEmail');
@@ -47,10 +32,20 @@ export default function DashboardHeader() {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-6 py-4">
+    <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 lg:px-6 py-4">
       <div className="flex items-center justify-between">
-        {/* User Info */}
-        <div className="relative" ref={userMenuRef}>
+        {/* Mobile Menu Button + User Info */}
+        <div className="flex items-center gap-4">
+          {/* Mobile Menu Button */}
+          <button
+            onClick={onToggleMobileMenu}
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          >
+            <Menu className="h-6 w-6 text-gray-600 dark:text-gray-400" />
+          </button>
+          
+          {/* User Info */}
+          <div className="relative" ref={userMenuRef}>
           <button 
             onClick={() => setUserMenuOpen(!userMenuOpen)}
             className="flex items-center gap-3 hover:bg-gray-50 dark:hover:bg-gray-800 px-3 py-2 rounded-lg transition-colors"
@@ -63,7 +58,7 @@ export default function DashboardHeader() {
               />
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-sm font-semibold text-gray-900 dark:text-white">Super Admin</span>
+              <span className="text-sm font-semibold text-gray-900 dark:text-white hidden sm:inline">Super Admin</span>
               <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} />
             </div>
           </button>
@@ -88,10 +83,11 @@ export default function DashboardHeader() {
               </button>
             </div>
           )}
+          </div>
         </div>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 lg:gap-4">
           {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
@@ -106,7 +102,7 @@ export default function DashboardHeader() {
           </button>
 
           {/* Language Selector */}
-          <button className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <button className="hidden md:flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
             <Globe className="h-5 w-5 text-gray-600 dark:text-gray-400" />
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">EN</span>
             <ChevronDown className="h-4 w-4 text-gray-400" />

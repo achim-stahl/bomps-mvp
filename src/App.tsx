@@ -4,8 +4,11 @@ import AddOnPage from './pages/AddOnPage';
 import PricingPage from './pages/PricingPage';
 import AboutPage from './pages/AboutPage';
 import LoginPage from './pages/LoginPage';
+import Login2Page from './pages/Login2Page';
 import RegisterPage from './pages/RegisterPage';
+import Register2Page from './pages/Register2Page';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import ForgotPassword2Page from './pages/ForgotPassword2Page';
 import NotFoundPage from './pages/NotFoundPage';
 import DashboardLayout from './components/dashboard/DashboardLayout';
 import DashboardHomePage from './pages/dashboard/DashboardHomePage';
@@ -26,8 +29,11 @@ function App() {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/login2" element={<Login2Page />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/register2" element={<Register2Page />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/forgot-password2" element={<ForgotPassword2Page />} />
         
         {/* Dashboard Routes */}
         <Route path="/dashboard" element={<DashboardLayout />}>

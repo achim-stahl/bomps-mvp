@@ -65,9 +65,9 @@ export default function CustomersListPage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Customers</h1>
+          <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Customers</h1>
           <div className="flex items-center gap-2 mt-2 text-sm text-gray-600 dark:text-gray-400">
             <a href="/dashboard" className="text-primary-600 dark:text-primary-400 hover:underline">Dashboard</a>
             <span>/</span>
@@ -76,7 +76,7 @@ export default function CustomersListPage() {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 lg:gap-3">
           <Button 
             onClick={handleGridView}
             variant="outline" 
@@ -100,7 +100,7 @@ export default function CustomersListPage() {
       <Card>
         <CardContent className="p-6">
           {/* Controls */}
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
             {/* Entries Per Page */}
             <div className="flex items-center gap-2">
               <select
@@ -117,7 +117,7 @@ export default function CustomersListPage() {
             </div>
 
             {/* Action Buttons and Search */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2 lg:gap-3">
               <Button variant="outline" className="bg-cyan-500 hover:bg-cyan-600 text-white border-cyan-500">
                 <Download className="h-4 w-4" />
               </Button>
@@ -129,14 +129,14 @@ export default function CustomersListPage() {
               </Button>
               
               {/* Search */}
-              <div className="relative">
+              <div className="relative w-full sm:w-auto">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                 <input
                   type="text"
                   placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="pl-10 pr-4 py-2 w-full sm:w-auto border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
               </div>
             </div>

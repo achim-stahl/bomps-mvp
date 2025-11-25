@@ -11,7 +11,8 @@ import {
   Bell,
   Settings,
   ChevronRight,
-  Search
+  Search,
+  X
 } from 'lucide-react';
 
 const menuItems = [
@@ -26,7 +27,12 @@ const menuItems = [
   { icon: Settings, label: 'Settings', path: '/dashboard/settings' },
 ];
 
-export default function DashboardSidebar() {
+interface DashboardSidebarProps {
+  isMobileMenuOpen?: boolean;
+  onCloseMobileMenu?: () => void;
+}
+
+export default function DashboardSidebar({ isMobileMenuOpen = false, onCloseMobileMenu }: DashboardSidebarProps) {
   const location = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -36,16 +42,41 @@ export default function DashboardSidebar() {
   );
 
   return (
-    <aside className="w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 h-screen sticky top-0 flex flex-col">
+    <>
+      {/* Mobile Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={onCloseMobileMenu}
+        />
+      )}
+      
+      {/* Sidebar */}
+      <aside className={`
+        fixed lg:static inset-y-0 left-0 z-50
+        w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 
+        h-screen flex flex-col
+        transform transition-transform duration-300 ease-in-out
+        ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+      `}>
       {/* Logo */}
       <div className="p-6 border-b border-gray-200 dark:border-gray-800">
-        <Link to="/dashboard" className="flex items-center">
-          <img 
-            src="/media/logo/bomps_dark_logo.png" 
-            alt="Bomps Logo" 
-            className="h-8 w-auto"
-          />
-        </Link>
+        <div className="flex items-center justify-between">
+          <Link to="/dashboard" className="flex items-center">
+            <img 
+              src="/media/logo/bomps_dark_logo.png" 
+              alt="Bomps Logo" 
+              className="h-8 w-auto"
+            />
+          </Link>
+          {/* Mobile Close Button */}
+          <button 
+            onClick={onCloseMobileMenu}
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          >
+            <X className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+          </button>
+        </div>
       </div>
 
       {/* Search */}
@@ -97,5 +128,6 @@ export default function DashboardSidebar() {
         )}
       </nav>
     </aside>
+    </>
   );
 }

@@ -68,9 +68,9 @@ export default function AddOnManagerPage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Add-on Manager</h1>
+          <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Add-on Manager</h1>
           <div className="flex items-center gap-2 mt-2 text-sm text-gray-600 dark:text-gray-400">
             <a href="/dashboard" className="text-primary-600 dark:text-primary-400 hover:underline">Dashboard</a>
             <span>/</span>
@@ -87,11 +87,11 @@ export default function AddOnManagerPage() {
 
       {/* Buy More Add-On Banner */}
       <Card className="bg-gradient-to-r from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800">
-        <CardContent className="p-8">
-          <div className="flex items-center justify-between">
+        <CardContent className="p-4 lg:p-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             {/* Left Side - Illustration */}
-            <div className="flex items-center gap-8">
-              <div className="text-6xl">
+            <div className="flex items-center gap-4 lg:gap-8">
+              <div className="text-4xl lg:text-6xl">
                 🛒👥
               </div>
               <div className="flex items-center gap-4">
@@ -117,11 +117,11 @@ export default function AddOnManagerPage() {
             </div>
 
             {/* Right Side - Buttons */}
-            <div className="flex gap-3">
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white">
+            <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+              <Button className="bg-orange-500 hover:bg-orange-600 text-white w-full sm:w-auto">
                 Buy Add-on Bundles
               </Button>
-              <Button className="bg-primary-600 hover:bg-primary-700 text-white">
+              <Button className="bg-primary-600 hover:bg-primary-700 text-white w-full sm:w-auto">
                 Buy More Add-on
               </Button>
             </div>
@@ -131,8 +131,8 @@ export default function AddOnManagerPage() {
 
       {/* Installed Add-on Section */}
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Installed Add-on</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-6">
+        <h2 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-4 lg:mb-6">Installed Add-on</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 lg:gap-6">
           {installedAddons.map((addon) => (
             <AddonCard key={addon.id} addon={addon} />
           ))}
@@ -141,8 +141,8 @@ export default function AddOnManagerPage() {
 
       {/* Explore Add-on Section */}
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Explore Add-on</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-6">
+        <h2 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-4 lg:mb-6">Explore Add-on</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 lg:gap-6">
           {exploreAddons.map((addon) => (
             <AddonCard key={addon.id} addon={addon} />
           ))}

@@ -63,7 +63,7 @@ export default function DashboardHomePage() {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
         {/* Welcome Card */}
         <Card className="bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-900 dark:to-black border-gray-700 dark:border-gray-800 col-span-1 md:col-span-2 lg:col-span-1">
           <CardContent className="p-6">
