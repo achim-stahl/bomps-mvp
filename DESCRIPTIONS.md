@@ -15,6 +15,8 @@
 7. [CTA Sections](#cta-sections)
 8. [Add-On Page](#add-on-page)
 9. [Footer](#footer)
+10. [Verwendung durch Entwickler](#️-verwendung-durch-entwickler)
+11. [Verbesserungsvorschläge](#️-verbesserungsvorschläge)
 
 ---
 
@@ -478,6 +480,26 @@ const heroTitle = "With Bomps, you can take care of each need of your business f
 | Add-On Page | `src/pages/AddOnPage.tsx` | 1-179 |
 | Header | `src/components/Header.tsx` | 1-66 |
 | Footer | `src/components/Footer.tsx` | 1-52 |
+
+---
+
+## ⚠️ Verbesserungsvorschläge
+
+> **Hinweis:** Die folgenden Texte aus der aktuellen Codebasis könnten verbessert werden:
+
+### SALES Module - Doppelte Beschreibung
+**Datei:** `src/components/sections/Modules.tsx`
+
+Der Header-Text und die erste Feature-Beschreibung sind nahezu identisch:
+- **Header:** "Manage your billing and accounting with little to no effort..."
+- **Feature 1:** "Simplify your accounting and make it easy to keep an eye on your money..."
+
+**Empfehlung:** Die Feature-Beschreibung sollte einzigartige Informationen liefern und nicht den Header-Text wiederholen.
+
+### Add-On Page - Titel Korrektur
+**Datei:** `src/pages/AddOnPage.tsx` (Zeile 101)
+
+Der aktuelle Code verwendet `All Add-on` (Singular). Sollte zu `All Add-ons` (Plural) geändert werden.
 
 ---
 
