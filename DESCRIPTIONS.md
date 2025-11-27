@@ -132,7 +132,7 @@ With Bomps, you can conveniently manage all your business functions from a singl
 - **Titel:** `Account Helps You Simplify Your Accounting and Billing`
 - **Beschreibung:**
 ```
-Manage your billing and accounting without little to no effort! Set financial goals and let the system monitor them for you, automate taxes, and more! - without lifting a finger.
+Manage your billing and accounting with little to no effort! Set financial goals and let the system monitor them for you, automate taxes, and more! - without lifting a finger.
 ```
 
 #### Features
@@ -390,7 +390,7 @@ With the Style theme, you get all of the above - and more. The theme gives you e
 ## Add-On Page
 
 ### Hero Section
-- **Überschrift:** `All Add-on`
+- **Überschrift:** `All Add-ons`
 - **Beschreibung:**
 ```
 Lay a solid foundation for your fashion brand. Grab a high-converting fashion theme powered by a secure backend coupled with an intuitive eCommerce mobile app.
